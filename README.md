@@ -18,6 +18,9 @@ Permite jugar manualmente o ver cómo el programa resuelve el puzzle automática
 <div align="center">
     <img width="657" height="462" alt="image" src="https://github.com/user-attachments/assets/5f34a68e-b654-4562-8bfb-28ffb3e20365" />
 </div>
+<div align="center">
+<img width="655" height="461" alt="image" src="https://github.com/user-attachments/assets/b0a2f5dc-d504-43e6-a943-0112a8ff2dff" />
+</div>
 
 ---
 
