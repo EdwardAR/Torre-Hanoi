@@ -1,55 +1,48 @@
-🏗️ Torre de Hanoi en Python (Tkinter)
+# 🏗️ Torre de Hanoi — Python + Tkinter
 
-Este proyecto implementa el clásico juego de la Torre de Hanoi utilizando la biblioteca Tkinter para crear una interfaz gráfica interactiva.
+Una implementación gráfica del clásico juego **Torre de Hanoi**, desarrollada en **Python** utilizando la biblioteca **Tkinter**.  
+Permite jugar manualmente o ver cómo el programa resuelve el puzzle automáticamente con animaciones.
 
-🎮 Descripción general
+---
 
-El programa permite al usuario jugar manualmente o ver una resolución automática del rompecabezas.
-Incluye controles para seleccionar la cantidad de discos (de 3 a 8), reiniciar la partida y contar los movimientos realizados.
+## 🎮 Características principales
 
-🧩 Características principales
+- 🎯 **Interfaz gráfica interactiva** con visualización de torres y discos.  
+- 🔢 Selección de **número de discos** (de 3 a 8).  
+- 🔁 **Reinicio rápido** del juego en cualquier momento.  
+- 🧠 **Modo automático** que muestra la solución paso a paso.  
+- ⚖️ **Validación de movimientos** (no se permite colocar discos grandes sobre pequeños).  
+- 🧾 **Contador de movimientos** actualizado en tiempo real.  
+- 🏆 **Mensaje de victoria** al completar correctamente el desafío.
 
-Interfaz gráfica con canvas para visualizar las tres torres y los discos.
+---
 
-Control del número de discos mediante un Spinbox.
+## 🧩 Estructura del código
 
-Contador dinámico de movimientos.
+El código se organiza en una clase principal y varios métodos que gestionan tanto la lógica del juego como la interfaz gráfica:
 
-Posibilidad de auto-resolver el juego con animación paso a paso.
+### 📦 Clase `HanoiGame`
+Contiene toda la lógica del juego y la gestión de la interfaz.
 
-Validación de movimientos (no se permite colocar discos grandes sobre pequeños).
+#### Métodos destacados:
+- `create_towers()` → Dibuja las tres torres en el lienzo.  
+- `create_disks()` → Genera los discos con colores y tamaños dinámicos.  
+- `on_click(event)` → Gestiona la selección y movimiento de discos.  
+- `move_disk()` → Actualiza la posición de los discos entre torres.  
+- `check_win()` → Verifica si el jugador ha completado el juego.  
+- `start_autosolve()` → Ejecuta la resolución automática mediante recursión.  
+- `reset_game()` → Reinicia el tablero y el contador de movimientos.
 
-Mensajes informativos al ganar o realizar acciones inválidas.
+---
 
-⚙️ Componentes del código
+## 🧠 Lógica de resolución
 
-Clase HanoiGame: Contiene toda la lógica del juego y la interfaz.
+El método `start_autosolve()` utiliza un enfoque **recursivo** basado en el algoritmo clásico de la **Torre de Hanoi**:
 
-create_towers() y create_disks(): Dibujan las torres y los discos.
-
-on_click(): Gestiona la selección y movimiento de discos.
-
-move_disk(): Actualiza la posición del disco seleccionado.
-
-start_autosolve(): Ejecuta y anima la solución automática.
-
-reset_game(): Reinicia el tablero.
-
-Método hanoi_moves(): Genera recursivamente la secuencia de movimientos para resolver el puzzle.
-
-Ejecución principal: Crea la ventana principal y lanza el juego (root.mainloop()).
-
-🖥️ Ejecución
-
-Para ejecutar el programa:
-
-python hanoi_game.py
-
-
-Se abrirá una ventana donde podrás:
-
-Seleccionar el número de discos.
-
-Moverlos manualmente con clics.
-
-Ver la solución automática.
+```python
+def hanoi_moves(k, src, dst, aux):
+    if k == 0:
+        return
+    hanoi_moves(k - 1, src, aux, dst)
+    moves.append((src, dst))
+    hanoi_moves(k - 1, aux, dst, src)
