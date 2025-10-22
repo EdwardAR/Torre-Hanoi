@@ -17,7 +17,7 @@ Permite jugar manualmente o ver cómo el programa resuelve el puzzle automática
 
 <center>
     <img width="657" height="462" alt="image" src="https://github.com/user-attachments/assets/5f34a68e-b654-4562-8bfb-28ffb3e20365" />
-<center/>
+</center>
 
 ---
 
